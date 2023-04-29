@@ -16,6 +16,17 @@ input, button, select{
   outline: none;
   cursor: pointer;
 }
+:root{
+  --white: #ffffff;
+  --card: #F4F5F7;
+  --light: #EAEAEA;
+  --black: #000000;
+  --gray: #1d1d1d;
+  --grey: #222327;
+  --drak: #2F3138;
+  --green: #469264;
+  --greds: #DAE9E0;
+}
 h1,h2,h3,h4,h5,h6,p{
   cursor: default;
 }
