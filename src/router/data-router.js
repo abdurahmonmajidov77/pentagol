@@ -1,5 +1,5 @@
 import { lazy } from "react";
-const Admin = lazy(() => import("../pages/Admin/index"))
+const Admin = lazy(() => import ("../pages/Admin/index"))
 
 export const DataRouter = [
     {

@@ -1,6 +1,7 @@
-import "./style.css"
+import React from "react";
+import "./style.css";
 
-function Loader() {
+function Loading() {
     return (
         <div>
             <div className="loader">
@@ -26,4 +27,4 @@ function Loader() {
         </div>
     )
 }
-export default Loader
+export default Loading

@@ -1,9 +1,11 @@
+import AdminSidebar from "./Sidebar"
 import "./style.css"
 
-export function Admin() {
+function Admin() {
     return(
-        <>
-        ok
-        </>
+        <div className="Admin">
+            <AdminSidebar/>
+        </div>
     )
 }
+export default Admin
