@@ -1,0 +1,35 @@
+.AdminSidebar{
+    background-color: lightgreen;
+    height: 49vw;
+    display: flex;
+    flex-direction: column;
+    padding: 2.5vw 1vw;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+.AdminSidebar img{
+    margin-bottom: 2vw;
+    width: 22vw;
+}
+.AdminSidebar .SidebarText{
+    margin-top: 0.8vw;
+    cursor: pointer;
+    color: white;
+    font-size: 1.5vw;
+}
+.AdminSidebar .SidebarText:hover{
+    transform: translateX(1vw);
+}
+
+.AdminTop{
+    width: 67%;
+    padding: 1.5vw 1vw;
+    background-color: lightgreen;
+    position: fixed;
+    top: 0;
+    right: 10%;
+    color: white;
+    font-size: 1.5vw;
+}

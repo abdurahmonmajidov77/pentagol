@@ -5,6 +5,9 @@ function Admin() {
     return(
         <div className="Admin">
             <AdminSidebar/>
+            <div className="AdminMain">
+                
+            </div>
         </div>
     )
 }
