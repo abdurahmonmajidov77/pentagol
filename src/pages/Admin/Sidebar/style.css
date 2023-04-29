@@ -1,5 +1,5 @@
 .AdminSidebar{
-    background-color: lightgreen;
+    background-color: var(--green);
     height: 49vw;
     display: flex;
     flex-direction: column;
@@ -10,13 +10,13 @@
     bottom: 0;
 }
 .AdminSidebar img{
-    margin-bottom: 2vw;
-    width: 22vw;
+    width: 15vw;
+    padding: 3vw 1vw;
 }
 .AdminSidebar .SidebarText{
     margin-top: 0.8vw;
     cursor: pointer;
-    color: white;
+    color: var(--white);
     font-size: 1.5vw;
 }
 .AdminSidebar .SidebarText:hover{
@@ -24,12 +24,12 @@
 }
 
 .AdminTop{
-    width: 62%;
+    width: 68%;
     padding: 1.5vw 1vw;
-    background-color: lightgreen;
+    background-color: var(--green);
     position: fixed;
     top: 0;
     right: 15%;
-    color: white;
+    color: var(--white);
     font-size: 1.5vw;
 }

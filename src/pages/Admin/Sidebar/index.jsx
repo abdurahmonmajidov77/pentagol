@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom"
 import "./style.css"
+import mainImg from "../../../images/NavImg.png"
 
 function AdminSidebar() {
     const SetMain = async(e) => {
@@ -9,7 +10,7 @@ function AdminSidebar() {
     return(
         <>
             <div className="AdminSidebar">
-                <img src="https://picsum.photos/300" alt="img" />
+                <img src={mainImg} alt="img" />
                 <NavLink className="SidebarText" to="/">Home</NavLink>
                 <p className="SidebarText" id="Ligas" onClick={SetMain}>Ligas</p>
                 <p className="SidebarText" id="Matches" onClick={SetMain}>Matches</p>

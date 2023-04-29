@@ -1,11 +1,17 @@
 .Admin{
     height: 100%;
 }
+.Admin .main-box{
+    padding-top: 10%;
+    padding-left: 18%;
+    width: 98vw;
+    height: 100%;
+}
 .Admin .main-btn-back{
     position: fixed;
     right: 0;
     top: 0;
-    background-color: lightgreen;
+    background-color: var(--green);
     width: max-content;
     width: 15%;
     height: 14.5%;
@@ -15,12 +21,68 @@
 }
 .Admin .main-button{
     padding: 1vw 1.4vw;
-    border: 0.2vw solid white;
+    border: 0.2vw solid var(--white);
     border-radius: 20%;
-    color: white;
+    color: var(--white);
     font-size: 1.3vw;
 }
 .Admin .main-button:hover{
+    color: var(--green);
+    background-color: var(--white);
+}
+.Admin .main-ul{
+    display: flex;
+    align-items: top;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+.Admin .main-li{
+    width: 30%;
+    padding: 1.5vw 1vw;
+    margin: 1.2vw;
+    border: 0.2vw solid var(--green);
+    border-radius: 5%;
+}
+.Admin .main-li:hover{
+    border: 0.2vw dotted var(--green);
+}
+.Admin .main-li img{
+    width: 100%;
+}
+.Admin .main-li h2{
+    font-size: 1.4vw;
+    color: var(--black);
+    margin: 1vw;
+}
+.Admin .main-li span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Admin .main-li span button{
+    padding: 0.1vw 3vw;
+    font-size: 1.2vw;
+    color: var(--white);
+    border: 0.001vw solid var(--white);
+}
+.Admin .main-li span .main-edit{
+    background-color: lightgreen;
+    border-bottom-left-radius: 1vw;
+    border-top-left-radius: 1vw;
+}
+.Admin .main-li span .main-edit:hover{
+    background-color: var(--white);
     color: lightgreen;
-    background-color: white;
+    border: 0.001vw solid lightgreen;
+}
+.Admin .main-li span .main-del{
+    background-color: red;
+    border-bottom-right-radius: 1vw;
+    border-top-right-radius: 1vw;
+}
+.Admin .main-li span .main-del:hover{
+    background-color: var(--white);
+    border: 0.001vw solid red;
+    color: red;
 }
