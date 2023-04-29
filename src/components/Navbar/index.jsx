@@ -1,5 +1,5 @@
 import './style.css';
-import
+import NavImg from '../../images/NavImg.png'
 
 function Navbar() {
   return (
