@@ -1,3 +1,4 @@
+import AdminLigas from "./Ligas"
 import AdminSidebar from "./Sidebar"
 import "./style.css"
 
@@ -6,7 +7,7 @@ function Admin() {
         <div className="Admin">
             <AdminSidebar/>
             <div className="AdminMain">
-                
+                {window.localStorage.getItem("SetMain") == "Ligas" ? <AdminLigas/> : null}
             </div>
         </div>
     )
