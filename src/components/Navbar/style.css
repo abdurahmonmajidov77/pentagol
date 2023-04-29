@@ -1,0 +1,19 @@
+.Navbar{
+    z-index: 2;
+    position: fixed;
+    width: 100%;
+    padding: 1vw 2.4vw;
+    background-color: var(--green);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    left: 0;
+}
+.Navbar img{
+    width: 12%;
+}
+.light{
+    font-size: 2vw;
+    padding: 1.4vw;
+}
