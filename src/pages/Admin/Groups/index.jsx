@@ -4,13 +4,14 @@ import { IMAGE_URL } from "../../../utils"
 
 function AdminGroups() {
     const [modal, setModal] = useState(false)
+    const [modalEdit, setModalEdit] = useState(false)
     const [image, SetImage] = useState(null)
     const title = useRef()
     const [imgLoading, SetImgLoading] = useState(false)
     const UploadImage = (e) => {
         const formData = new FormData()
         formData.append("file", e.target.files[0])
-        formData.append("upload_preset", "fzgqhpkb")
+        formData.append("ml_default", "fzgqhpkb")
         SetImgLoading(true)
         const postImage = async() => {
             try {
@@ -24,13 +25,13 @@ function AdminGroups() {
         postImage()
     }
     const modalOpen = () => {setModal(true)}
-    const modalClose = () => {setModal(false)}
+    const modalClose = () => {setModal(false);setModalEdit(false)}
     return(
         <div className="AdminGrous main-box">
             <span className="main-btn-back">
                 <button className="main-button" onClick={modalOpen}>+ Add Group</button>
             </span>
-            {modal ? <div className="overlay" onClick={modalClose}></div> :null}
+            {modal || modalEdit ? <div className="overlay" onClick={modalClose}></div> :null}
             {modal ? <form className="main-modal">
                 <h1>Add Group</h1>
                 <h4>Enter Group's title</h4>
@@ -39,20 +40,20 @@ function AdminGroups() {
                 {imgLoading ? <p>Loading ...</p> : <input onChange={UploadImage} type="file" required/>}
                 <button>+ Add Group</button>
             </form> :null}
+            {modalEdit ? <form className="main-modal">
+                <h1>Edit Group</h1>
+                <h4>Edit Group's title</h4>
+                <input type="text" ref={title} placeholder="Group's title" required/>
+                <h4>Edit Group Photo</h4>
+                {imgLoading ? <p>Loading ...</p> : <input onChange={UploadImage} type="file" required/>}
+                <button>+ Edit Group</button>
+            </form> :null}
             <ul className="main-ul">
-                <li className="main-li">
-                    <img src="https://picsum.photos/300" alt="" />
-                    <h2>Barcelona</h2>
-                    <span>
-                        <button className="main-edit">Edit</button>
-                        <button className="main-del">Delete</button>
-                    </span>
-                </li>
                 <li className="main-li">
                     <img src="https://picsum.photos/300" alt="" />
                     <h2>Real Madrid</h2>
                     <span>
-                        <button className="main-edit">Edit</button>
+                        <button className="main-edit" onClick={() => setModalEdit(true)}>Edit</button>
                         <button className="main-del">Delete</button>
                     </span>
                 </li>
