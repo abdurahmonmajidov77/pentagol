@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react"
 import axios from "axios"
 import { IMAGE_URL } from "../../../utils"
 import { useDispatch, useSelector } from "react-redux"
-import { GetGroup, PostGroup } from "../../../redux/group"
+import { DeleteGroup, GetGroup, PostGroup } from "../../../redux/group"
 
 function AdminGroups() {
     const [modal, setModal] = useState(false)
@@ -12,13 +12,12 @@ function AdminGroups() {
     const [imgLoading, SetImgLoading] = useState(false)
     const dispatch = useDispatch()
     const dataGroup = useSelector(state => state.group)
-    const headers = {
-        'ngrok-skip-browser-warning': 'true'
-    }
     useEffect(() => {
-        dispatch(GetGroup(headers))
+        dispatch(GetGroup())
     }, [])
-    console.log(dataGroup.getGroup.Data);
+    console.log(dataGroup);
+    const modalOpen = () => {setModal(true)}
+    const modalClose = () => {setModal(false);setModalEdit(false)}
     const UploadImage = (e) => {
         const formData = new FormData()
         formData.append("file", e.target.files[0])
@@ -35,15 +34,32 @@ function AdminGroups() {
         }
         postImage()
     }
-    const Add = () => {
+    const Add = async() => {
         const body = {
           name: title.current.value,
-          img: image  
+          img: image
         }
-        dispatch(PostGroup(body))
+        const config = {
+            headers:{
+                Authorization: `Bearer ${window.localStorage.getItem("AuthToken")}` 
+            }
+        }
+        await dispatch(PostGroup({body, config}))
+        modalClose()
+        dispatch(GetGroup())
     }
-    const modalOpen = () => {setModal(true)}
-    const modalClose = () => {setModal(false);setModalEdit(false)}
+    const Del = async(e) => {
+        const config = {
+            headers:{
+                Authorization: `Bearer ${window.localStorage.getItem("AuthToken")}` 
+            }
+        }
+        const id = e.target.value
+        await dispatch(DeleteGroup({id,config}))
+        modalClose()
+        dispatch(GetGroup())
+    }
+
     return(
         <div className="AdminGrous main-box">
             <span className="main-btn-back">
@@ -71,11 +87,11 @@ function AdminGroups() {
                 dataGroup.getGroup.Data.length > 0 ?
                 dataGroup.getGroup.Data.map(e => 
                 <li className="main-li" key={e.id}>
-                    <img src={e.path} alt="" />
-                    <h2>{e.title}</h2>
+                    <img src={e.imgPath} alt="img" />
+                    <h2>{e.name}</h2>
                     <span>
                         <button value={e.id} className="main-edit" onClick={() => setModalEdit(true)}>Edit</button>
-                        <button value={e.id} className="main-del">Delete</button>
+                        <button value={e.id} className="main-del" onClick={Del}>Delete</button>
                     </span>
                 </li>
                 ) : <h2>No Groups here yet</h2>

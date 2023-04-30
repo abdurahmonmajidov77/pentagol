@@ -2,23 +2,23 @@ import axios from "axios"
 import { API_URL } from "../../utils"
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 
-export const GetGroup = createAsyncThunk("group/get", async(headers) => {
-    return await axios.get(`${API_URL}/club` ,headers).then(res => res.data)
+export const GetGroup = createAsyncThunk("group/get", async() => {
+    return await axios.get(`${API_URL}/club?PageSize=10&PageIndex=1`,{headers: {'ngrok-skip-browser-warning': 'true'}}).then(res => res.data)
 })
 export const GetGroupId = createAsyncThunk("groupid/get", async(id) => {
-    return await axios.get(`${API_URL}/club/${id}`).then(res => res.data)
+    return await axios.get(`${API_URL}/club/${id}`,{headers: {'ngrok-skip-browser-warning': 'true'}}).then(res => res.data)
 })
 export const GetGroupLegueId = createAsyncThunk("groupid/get", async(id) => {
-    return await axios.get(`${API_URL}/club/clubpropertiesbyleague/${id}`).then(res => res.data)
+    return await axios.get(`${API_URL}/club/clubpropertiesbyleague/${id}?PageSize=1&PageIndex=1`,{headers: {'ngrok-skip-browser-warning': 'true'}}).then(res => res.data)
 })
 export const PostGroup = createAsyncThunk("group/post", async({body, config}) => {
-    return await axios.post(`${API_URL}/club`,body,config).then(res => res.data)
+    return await axios.post(`${API_URL}/club`,body,config,{headers: {'ngrok-skip-browser-warning': 'true'}}).then(res => res.data)
 })
 export const DeleteGroup = createAsyncThunk("group/delete", async({id, config}) => {
-    return await axios.delete(`${API_URL}/club/${id}`, config).then(res => res.data)
+    return await axios.delete(`${API_URL}/club/${id}`, config,{headers: {'ngrok-skip-browser-warning': 'true'}}).then(res => res.data)
 })
 export const PutGroup = createAsyncThunk("group/put", async({id, body, config}) => {
-    return await axios.put(`${API_URL}/club/${id}`,body,config).then(res => res.data)
+    return await axios.put(`${API_URL}/club/${id}`,body,config,{headers: {'ngrok-skip-browser-warning': 'true'}}).then(res => res.data)
 })
 
 const GroupSlice = createSlice({
