@@ -86,3 +86,60 @@
     border: 0.001vw solid red;
     color: red;
 }
+.Admin .main-modal{
+    z-index: 2;
+    position: fixed;
+    top: 10%;
+    right: 40%;
+    left: 40%;
+    background-color: var(--white);
+    color: var(--black);
+    display: flex;
+    flex-direction: column;
+    border-radius: 1vw;
+}
+.Admin .main-modal h1{
+    color: var(--white);
+    background-color: var(--green);
+    margin-bottom: 1vw;
+    padding: 1.5vw 1vw;
+    font-size: 2vw;
+    border-top-right-radius: 1vw;
+    border-top-left-radius: 1vw;
+}
+.Admin .main-modal h4{
+    font-size: 1.5vw;
+    margin: 1vw 1vw;
+}
+.Admin .main-modal input{
+    padding: 0.5vw 1vw;
+    margin: 0 1vw;
+    border: 0.1vw solid var(--green);
+    color: var(--black);
+    border-radius: 2vw;
+    font-size: 1.2vw;
+}
+.Admin .main-modal button{
+    background-color: var(--green);
+    color: var(--white);
+    padding: 1vw 3vw;
+    font-size: 1.5vw;
+    margin-top: 2vw;
+    border-bottom-right-radius: 1vw;
+    border-bottom-left-radius: 1vw;
+}
+.Admin .main-modal button:hover{
+    background-color: var(--white);
+    color: var(--green);
+}
+.Admin .overlay{
+    background-color: rgba(0, 0, 0, 0.397);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}

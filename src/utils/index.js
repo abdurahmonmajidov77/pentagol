@@ -1,2 +1,2 @@
-const API_URL = ""
-const IMAGE_URL = ""
+export const API_URL = ""
+export const IMAGE_URL = ""
