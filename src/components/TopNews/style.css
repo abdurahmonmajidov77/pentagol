@@ -3,6 +3,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 1vw 0;
+    margin: 1vw 0;
 }
 .TopNewsBox{
     width: 80%;
@@ -77,6 +79,7 @@
 .TopNewsTable h3{
     font-size: 2vw;
     margin-bottom: 1vw;
+    color: var(--black);
 }
 .TopNewsTable select{
     width: 100%;
@@ -84,6 +87,7 @@
     border-radius: .6vw;
     font-size: 1.3vw;
     -webkit-appearance: none;
+    color: var(--black);
     background-color: var(--white);
 }
 .TopNewsTable ul{
@@ -115,6 +119,7 @@
     font-size: 1.4vw;
     font-weight: 500;
     margin: 0 .5vw;
+    color: var(--black);
 }
 .TopNewsSelectDown{
     display: flex;
@@ -124,4 +129,5 @@
     font-size: 1.4vw;
     font-weight: 500;
     margin: 0 .5vw;
+    color: var(--black);
 }

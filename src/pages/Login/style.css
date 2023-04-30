@@ -1,0 +1,51 @@
+.Login{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Login i{
+    cursor: pointer;
+    position: fixed;
+    font-size: 2.2vw;
+    background-color: var(--green);
+    color: white;
+    padding: 1vw 1.1vw;
+    border-radius: 50%;
+    bottom: 4%;
+    left: 2%;
+}
+.LoginBox{
+    text-align: center;
+    width: 50%;
+    background-color: var(--green);
+    padding: 1.5vw 2vw;
+    color: white;
+    border-radius: 2vw;
+}
+.LoginBox h1{
+    font-size: 3vw;
+    margin: 1vw;
+}
+.LoginBox p{
+    font-size: 1.4vw;
+    margin: 0.5vw;
+}
+.LoginBox input{
+    background-color: white;
+    font-size: 1.5vw;
+    padding: .8vw;
+    margin: .6vw;
+    border-radius: 1.4vw;
+}
+.LoginBox input::placeholder{
+    color: grey;
+}
+.LoginBox button{
+    color: white;
+    padding: 1vw 3vw;
+    font-size: 1.4vw;
+    color: var(--green);
+    border-radius: 2vw;
+    margin-top: .5vw;
+}

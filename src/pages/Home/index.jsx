@@ -1,4 +1,6 @@
+import AllNews from '../../components/AllNews';
 import Footer from '../../components/Footer';
+import LastNews from '../../components/LastNews';
 import Main from '../../components/Main';
 import Navbar from '../../components/Navbar';
 import TopNews from '../../components/TopNews';
@@ -9,6 +11,8 @@ function Home() {
     <div className="Home">
         <Main/>
         <TopNews/>
+        <LastNews/>
+        <AllNews/>
         <Footer/>
     </div>
   );

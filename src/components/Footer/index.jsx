@@ -1,7 +1,12 @@
 import './style.css';
 import FooterImg from '../../images/NavImg.png'
+import { useNavigate } from 'react-router';
 
 function Footer() {
+    const navigate = useNavigate()
+    const HandleLink = () => {
+        navigate('/admin')
+    }
   return (
     <div className="Footer">
         <ul>
@@ -26,7 +31,7 @@ function Footer() {
                 <h4>Main</h4>
                 <h4>Match center</h4>
                 <h4>Football</h4>
-                <h4>Tennis</h4>
+                <h4 onClick={HandleLink}>Tennis</h4>
                 <h4>Cybersport</h4>
             </li>
             <li>
