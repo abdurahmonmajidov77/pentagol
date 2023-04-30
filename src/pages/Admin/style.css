@@ -1,0 +1,159 @@
+.Admin{
+    height: 100%;
+}
+/* main box */
+.Admin .main-box{
+    padding-top: 10%;
+    padding-left: 18%;
+    width: 98vw;
+    height: 100%;
+}
+.Admin .main-btn-back{
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-color: var(--green);
+    width: max-content;
+    width: 15%;
+    height: 14.5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Admin .main-button{
+    padding: 1vw 1.4vw;
+    border: 0.2vw solid var(--white);
+    border-radius: 20%;
+    color: var(--white);
+    font-size: 1.3vw;
+}
+.Admin .main-button:hover{
+    color: var(--green);
+    background-color: var(--white);
+}
+/* ul */
+.Admin .main-ul{
+    display: flex;
+    align-items: top;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+.Admin .main-li{
+    padding: 1.5vw 1vw;
+    margin: 1.2vw;
+    border: 0.2vw solid var(--green);
+    border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.Admin .main-li:hover{
+    border: 0.2vw dotted var(--green);
+}
+.Admin .main-li img{
+    width: 100%;
+}
+.Admin .main-li h2{
+    font-size: 1.4vw;
+    color: var(--black);
+    margin: 1vw;
+}
+.Admin .main-li p{
+    font-size: 1.2vw;
+    color: var(--black);
+    max-width: 50%;
+}
+.Admin .main-li span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Admin .main-li span img{
+    width: 15%;
+    border-radius: 50%;
+}
+.Admin .main-li span button{
+    padding: 0.1vw 3vw;
+    font-size: 1.2vw;
+    color: var(--white);
+    border: 0.001vw solid var(--white);
+}
+.Admin .main-li span .main-edit{
+    background-color: lightgreen;
+    border-bottom-left-radius: 1vw;
+    border-top-left-radius: 1vw;
+}
+.Admin .main-li span .main-edit:hover{
+    background-color: var(--white);
+    color: lightgreen;
+    border: 0.001vw solid lightgreen;
+}
+.Admin .main-li span .main-del{
+    background-color: red;
+    border-bottom-right-radius: 1vw;
+    border-top-right-radius: 1vw;
+}
+.Admin .main-li span .main-del:hover{
+    background-color: var(--white);
+    border: 0.001vw solid red;
+    color: red;
+}
+/* modal */
+.Admin .main-modal{
+    z-index: 2;
+    position: fixed;
+    top: 10%;
+    right: 40%;
+    left: 40%;
+    background-color: var(--white);
+    color: var(--black);
+    display: flex;
+    flex-direction: column;
+    border-radius: 1vw;
+}
+.Admin .main-modal h1{
+    color: var(--white);
+    background-color: var(--green);
+    margin-bottom: 1vw;
+    padding: 1.5vw 1vw;
+    font-size: 2vw;
+    border-top-right-radius: 1vw;
+    border-top-left-radius: 1vw;
+}
+.Admin .main-modal h4{
+    font-size: 1.5vw;
+    margin: 1vw 1vw;
+}
+.Admin .main-modal input, .Admin .main-modal select{
+    padding: 0.5vw 1vw;
+    margin: 0 1vw;
+    border: 0.1vw solid var(--green);
+    color: var(--black);
+    border-radius: 2vw;
+    font-size: 1.2vw;
+}
+.Admin .main-modal button{
+    background-color: var(--green);
+    color: var(--white);
+    padding: 1vw 3vw;
+    font-size: 1.5vw;
+    margin-top: 2vw;
+    border-bottom-right-radius: 1vw;
+    border-bottom-left-radius: 1vw;
+}
+.Admin .main-modal button:hover{
+    background-color: var(--white);
+    color: var(--green);
+}
+.Admin .overlay{
+    background-color: rgba(0, 0, 0, 0.397);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}

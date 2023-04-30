@@ -15,6 +15,7 @@ input, button, select{
   border: none;
   outline: none;
   cursor: pointer;
+  background: none;
 }
 :root{
   --white: #ffffff;

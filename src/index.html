@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //    async function fetchData() {
+    //     try {
+    //         const response = await fetch('https://8b17-89-236-218-41.ngrok-free.app/api/WeatherForecast');
+    //         const data = await response.json();
+    //         console.log(data);
+    //     } catch (error) {
+    //         console.error(error);
+    //     }
+    //     }
+
+    //     fetchData();
+    fetch('https://be57-89-236-218-41.ngrok-free.app/club?PageSize=10&PageIndex=1', {
+        headers: {
+            'ngrok-skip-browser-warning': 'true'
+        }
+        })
+        .then(response => response.json())
+        .then(data => {
+        console.log(data);
+        })
+        .catch(error => {
+        console.error(error);
+        });
+    </script>
+</body>
+</html>
