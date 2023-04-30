@@ -1,11 +1,17 @@
+import { useNavigate } from "react-router"
 import AdminGroups from "./Groups"
 import AdminLigas from "./Ligas"
 import AdminMatches from "./Matches"
 import AdminNews from "./News"
 import AdminSidebar from "./Sidebar"
 import "./style.css"
+import { useEffect } from "react"
 
 function Admin() {
+    const navigate = useNavigate() 
+    useEffect(() => {  
+        !window.localStorage.getItem("AuthToken") ? navigate("/sign") : null
+    })
     return(
         <div className="Admin">
             <AdminSidebar/>
