@@ -1,6 +1,6 @@
 .More{
     width: 100%;
-    margin-top: 10%;
+    margin-top: 8%;
     padding: 2vw;
 }
 .MoreMain{
@@ -10,5 +10,67 @@
 }
 .MoreBox{
     width: 75%;
-
+}
+.MoreBox h4{
+    font-size: 1.2vw;
+    font-weight: 300;
+    margin: .5vw;
+    color: var(--black);
+}
+.MoreBox h1{
+    font-size: 3vw;
+    font-weight: 500;
+    margin: 1vw;
+    color: var(--black);
+}
+.MoreBox img{
+    width: 100%;
+    height: 60vh;
+    border-radius: 1vw;
+    margin: 1vw 0;
+}
+.MoreBox p{
+    font-size: 1.5vw;
+    font-weight: 400;
+    margin: 1vw;
+    letter-spacing: .1vw;
+    color: var(--black);
+}
+.MoreTable{
+    width: 25%;
+    margin-left: 2vw;
+}
+.MoreMainTap{
+    margin: 1vw 0;
+    padding: 1vw 1vw;
+    background-color: var(--card);
+    border-radius: 1vw;
+}
+.MoreMainTap h3{
+    font-size: 1.6vw;
+    margin: .6vw 0;
+    color: var(--black);
+}
+.MoreMainTap ul{
+    width: 100%;
+}
+.MoreMainTap ul li{
+    cursor: pointer;
+    padding: 1vw 0;
+    border-top: .01vw solid var(--black);
+}
+.MoreMainTap ul li:first-child{
+    border: none;
+}
+.MoreMainTap ul li h4{
+    cursor: pointer;
+    font-size: 1.2vw;
+    font-weight: 600;
+    margin: .5vw 0;
+    color: var(--black);
+}
+.MoreMainTap ul li p{
+    font-size: 1vw;
+    color: var(--black);
+    font-weight: 400;
 }
