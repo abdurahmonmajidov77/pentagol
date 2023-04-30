@@ -2,50 +2,50 @@ import axios from "axios"
 import { API_URL } from "../../utils"
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 
-export const GetLiga = createAsyncThunk("liga/get", async() => {
+export const GetMatch = createAsyncThunk("match/get", async() => {
     return await axios.get(`${API_URL}`).then(res => res.data)
 })
-export const GetLigaId = createAsyncThunk("ligaid/get", async(id) => {
+export const GetMatchId = createAsyncThunk("matchid/get", async(id) => {
     return await axios.get(`${API_URL}/${id}`).then(res => res.data)
 })
-export const PostLiga = createAsyncThunk("liga/post", async({body, config}) => {
+export const PostMatch = createAsyncThunk("match/post", async({body, config}) => {
     return await axios.post(`${API_URL}`,body,config).then(res => res.data)
 })
-export const DeleteLiga = createAsyncThunk("liga/delete", async({id, config}) => {
+export const DeleteMatch = createAsyncThunk("match/delete", async({id, config}) => {
     return await axios.delete(`${API_URL}/${id}`, config).then(res => res.data)
 })
-export const PutLiga = createAsyncThunk("liga/put", async({id, body, config}) => {
+export const PutMatch = createAsyncThunk("match/put", async({id, body, config}) => {
     return await axios.put(`${API_URL}/${id}`,body,config).then(res => res.data)
 })
 
-const LigaSlice = createSlice({
-    name: "liga",
+const MatchSlice = createSlice({
+    name: "match",
     initialState:{
-        getLiga:{
+        getMatch:{
             Loading: false,
             Error: false,
             Success: false,
             Data: []
         },
-        getLigaId:{
+        getMatchId:{
             Loading: false,
             Error: false,
             Success: false,
             Data: []
         },
-        postLiga:{
+        postMatch:{
             Loading: false,
             Error: false,
             Success: false,
             Data: []
         },
-        deleteLiga:{
+        deleteMatch:{
             Loading: false,
             Error: false,
             Success: false,
             Data: []
         },
-        putLiga:{
+        putMatch:{
             Loading: false,
             Error: false,
             Success: false,
@@ -53,92 +53,92 @@ const LigaSlice = createSlice({
         }
     },
     extraReducers:{
-        [GetLiga.pending] : (state, action) => {
-            state.getLiga.Loading = true;
-            state.getLiga.Error = false;
-            state.getLiga.Success = false;
+        [GetMatch.pending] : (state, action) => {
+            state.getMatch.Loading = true;
+            state.getMatch.Error = false;
+            state.getMatch.Success = false;
         },
-        [GetLiga.fulfilled] : (state, action) => {
-            state.getLiga.Loading = false;
-            state.getLiga.Error = false;
-            state.getLiga.Success = true;
-            state.getLiga.Data = action.payload;
+        [GetMatch.fulfilled] : (state, action) => {
+            state.getMatch.Loading = false;
+            state.getMatch.Error = false;
+            state.getMatch.Success = true;
+            state.getMatch.Data = action.payload;
         },
-        [GetLiga.rejected] : (state, action) => {
-            state.getLiga.Loading = false;
-            state.getLiga.Error = true;
-            state.getLiga.Success = false;
-            state.getLiga.Data = action.payload;
+        [GetMatch.rejected] : (state, action) => {
+            state.getMatch.Loading = false;
+            state.getMatch.Error = true;
+            state.getMatch.Success = false;
+            state.getMatch.Data = action.payload;
         },//
-        [GetLigaId.pending] : (state, action) => {
-            state.getLigaId.Loading = true;
-            state.getLigaId.Error = false;
-            state.getLigaId.Success = false;
+        [GetMatchId.pending] : (state, action) => {
+            state.getMatchId.Loading = true;
+            state.getMatchId.Error = false;
+            state.getMatchId.Success = false;
         },
-        [GetLigaId.fulfilled] : (state, action) => {
-            state.getLigaId.Loading = false;
-            state.getLigaId.Error = false;
-            state.getLigaId.Success = true;
-            state.getLigaId.Data = action.payload;
+        [GetMatchId.fulfilled] : (state, action) => {
+            state.getMatchId.Loading = false;
+            state.getMatchId.Error = false;
+            state.getMatchId.Success = true;
+            state.getMatchId.Data = action.payload;
         },
-        [GetLigaId.rejected] : (state, action) => {
-            state.getLigaId.Loading = false;
-            state.getLigaId.Error = true;
-            state.getLigaId.Success = false;
-            state.getLigaId.Data = action.payload;
+        [GetMatchId.rejected] : (state, action) => {
+            state.getMatchId.Loading = false;
+            state.getMatchId.Error = true;
+            state.getMatchId.Success = false;
+            state.getMatchId.Data = action.payload;
         },//
-        [PostLiga.pending] : (state, action) => {
-            state.postLiga.Loading = true;
-            state.postLiga.Error = false;
-            state.postLiga.Success = false;
+        [PostMatch.pending] : (state, action) => {
+            state.postMatch.Loading = true;
+            state.postMatch.Error = false;
+            state.postMatch.Success = false;
         },
-        [PostLiga.fulfilled] : (state, action) => {
-            state.postLiga.Loading = false;
-            state.postLiga.Error = false;
-            state.postLiga.Success = true;
-            state.postLiga.Data = action.payload;
+        [PostMatch.fulfilled] : (state, action) => {
+            state.postMatch.Loading = false;
+            state.postMatch.Error = false;
+            state.postMatch.Success = true;
+            state.postMatch.Data = action.payload;
         },
-        [PostLiga.rejected] : (state, action) => {
-            state.postLiga.Loading = false;
-            state.postLiga.Error = true;
-            state.postLiga.Success = false;
-            state.postLiga.Data = action.payload;
+        [PostMatch.rejected] : (state, action) => {
+            state.postMatch.Loading = false;
+            state.postMatch.Error = true;
+            state.postMatch.Success = false;
+            state.postMatch.Data = action.payload;
         },//
-        [DeleteLiga.pending] : (state, action) => {
-            state.deleteLiga.Loading = true;
-            state.deleteLiga.Error = false;
-            state.deleteLiga.Success = false;
+        [DeleteMatch.pending] : (state, action) => {
+            state.deleteMatch.Loading = true;
+            state.deleteMatch.Error = false;
+            state.deleteMatch.Success = false;
         },
-        [DeleteLiga.fulfilled] : (state, action) => {
-            state.deleteLiga.Loading = false;
-            state.deleteLiga.Error = false;
-            state.deleteLiga.Success = true;
-            state.deleteLiga.Data = action.payload;
+        [DeleteMatch.fulfilled] : (state, action) => {
+            state.deleteMatch.Loading = false;
+            state.deleteMatch.Error = false;
+            state.deleteMatch.Success = true;
+            state.deleteMatch.Data = action.payload;
         },
-        [DeleteLiga.rejected] : (state, action) => {
-            state.deleteLiga.Loading = false;
-            state.deleteLiga.Error = true;
-            state.deleteLiga.Success = false;
-            state.deleteLiga.Data = action.payload;
+        [DeleteMatch.rejected] : (state, action) => {
+            state.deleteMatch.Loading = false;
+            state.deleteMatch.Error = true;
+            state.deleteMatch.Success = false;
+            state.deleteMatch.Data = action.payload;
         },//
-        [PutLiga.pending] : (state, action) => {
-            state.putLiga.Loading = true;
-            state.putLiga.Error = false;
-            state.putLiga.Success = false;
+        [PutMatch.pending] : (state, action) => {
+            state.putMatch.Loading = true;
+            state.putMatch.Error = false;
+            state.putMatch.Success = false;
         },
-        [PutLiga.fulfilled] : (state, action) => {
-            state.putLiga.Loading = false;
-            state.putLiga.Error = false;
-            state.putLiga.Success = true;
-            state.putLiga.Data = action.payload;
+        [PutMatch.fulfilled] : (state, action) => {
+            state.putMatch.Loading = false;
+            state.putMatch.Error = false;
+            state.putMatch.Success = true;
+            state.putMatch.Data = action.payload;
         },
-        [PutLiga.rejected] : (state, action) => {
-            state.putLiga.Loading = false;
-            state.putLiga.Error = true;
-            state.putLiga.Success = false;
-            state.putLiga.Data = action.payload;
+        [PutMatch.rejected] : (state, action) => {
+            state.putMatch.Loading = false;
+            state.putMatch.Error = true;
+            state.putMatch.Success = false;
+            state.putMatch.Data = action.payload;
         }
     }
 })
-export const {} = LigaSlice.actions;
-export default LigaSlice.reducer
+export const {} = MatchSlice.actions;
+export default MatchSlice.reducer

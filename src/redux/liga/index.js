@@ -19,7 +19,7 @@ export const PutLiga = createAsyncThunk("liga/put", async({id, body, config}) =>
 })
 
 const LigaSlice = createSlice({
-    name: "liga",
+    name: "Group",
     initialState:{
         getLiga:{
             Loading: false,

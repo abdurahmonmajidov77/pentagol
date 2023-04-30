@@ -2,50 +2,50 @@ import axios from "axios"
 import { API_URL } from "../../utils"
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 
-export const GetLiga = createAsyncThunk("liga/get", async() => {
+export const GetNews = createAsyncThunk("news/get", async() => {
     return await axios.get(`${API_URL}`).then(res => res.data)
 })
-export const GetLigaId = createAsyncThunk("ligaid/get", async(id) => {
+export const GetNewsId = createAsyncThunk("newsid/get", async(id) => {
     return await axios.get(`${API_URL}/${id}`).then(res => res.data)
 })
-export const PostLiga = createAsyncThunk("liga/post", async({body, config}) => {
+export const PostNews = createAsyncThunk("news/post", async({body, config}) => {
     return await axios.post(`${API_URL}`,body,config).then(res => res.data)
 })
-export const DeleteLiga = createAsyncThunk("liga/delete", async({id, config}) => {
+export const DeleteNews = createAsyncThunk("news/delete", async({id, config}) => {
     return await axios.delete(`${API_URL}/${id}`, config).then(res => res.data)
 })
-export const PutLiga = createAsyncThunk("liga/put", async({id, body, config}) => {
+export const PutNews = createAsyncThunk("news/put", async({id, body, config}) => {
     return await axios.put(`${API_URL}/${id}`,body,config).then(res => res.data)
 })
 
-const LigaSlice = createSlice({
-    name: "liga",
+const NewsSlice = createSlice({
+    name: "news",
     initialState:{
-        getLiga:{
+        getNews:{
             Loading: false,
             Error: false,
             Success: false,
             Data: []
         },
-        getLigaId:{
+        getNewsId:{
             Loading: false,
             Error: false,
             Success: false,
             Data: []
         },
-        postLiga:{
+        postNews:{
             Loading: false,
             Error: false,
             Success: false,
             Data: []
         },
-        deleteLiga:{
+        deleteNews:{
             Loading: false,
             Error: false,
             Success: false,
             Data: []
         },
-        putLiga:{
+        putNews:{
             Loading: false,
             Error: false,
             Success: false,
@@ -53,92 +53,92 @@ const LigaSlice = createSlice({
         }
     },
     extraReducers:{
-        [GetLiga.pending] : (state, action) => {
-            state.getLiga.Loading = true;
-            state.getLiga.Error = false;
-            state.getLiga.Success = false;
+        [GetNews.pending] : (state, action) => {
+            state.getNews.Loading = true;
+            state.getNews.Error = false;
+            state.getNews.Success = false;
         },
-        [GetLiga.fulfilled] : (state, action) => {
-            state.getLiga.Loading = false;
-            state.getLiga.Error = false;
-            state.getLiga.Success = true;
-            state.getLiga.Data = action.payload;
+        [GetNews.fulfilled] : (state, action) => {
+            state.getNews.Loading = false;
+            state.getNews.Error = false;
+            state.getNews.Success = true;
+            state.getNews.Data = action.payload;
         },
-        [GetLiga.rejected] : (state, action) => {
-            state.getLiga.Loading = false;
-            state.getLiga.Error = true;
-            state.getLiga.Success = false;
-            state.getLiga.Data = action.payload;
+        [GetNews.rejected] : (state, action) => {
+            state.getNews.Loading = false;
+            state.getNews.Error = true;
+            state.getNews.Success = false;
+            state.getNews.Data = action.payload;
         },//
-        [GetLigaId.pending] : (state, action) => {
-            state.getLigaId.Loading = true;
-            state.getLigaId.Error = false;
-            state.getLigaId.Success = false;
+        [GetNewsId.pending] : (state, action) => {
+            state.getNewsId.Loading = true;
+            state.getNewsId.Error = false;
+            state.getNewsId.Success = false;
         },
-        [GetLigaId.fulfilled] : (state, action) => {
-            state.getLigaId.Loading = false;
-            state.getLigaId.Error = false;
-            state.getLigaId.Success = true;
-            state.getLigaId.Data = action.payload;
+        [GetNewsId.fulfilled] : (state, action) => {
+            state.getNewsId.Loading = false;
+            state.getNewsId.Error = false;
+            state.getNewsId.Success = true;
+            state.getNewsId.Data = action.payload;
         },
-        [GetLigaId.rejected] : (state, action) => {
-            state.getLigaId.Loading = false;
-            state.getLigaId.Error = true;
-            state.getLigaId.Success = false;
-            state.getLigaId.Data = action.payload;
+        [GetNewsId.rejected] : (state, action) => {
+            state.getNewsId.Loading = false;
+            state.getNewsId.Error = true;
+            state.getNewsId.Success = false;
+            state.getNewsId.Data = action.payload;
         },//
-        [PostLiga.pending] : (state, action) => {
-            state.postLiga.Loading = true;
-            state.postLiga.Error = false;
-            state.postLiga.Success = false;
+        [PostNews.pending] : (state, action) => {
+            state.postNews.Loading = true;
+            state.postNews.Error = false;
+            state.postNews.Success = false;
         },
-        [PostLiga.fulfilled] : (state, action) => {
-            state.postLiga.Loading = false;
-            state.postLiga.Error = false;
-            state.postLiga.Success = true;
-            state.postLiga.Data = action.payload;
+        [PostNews.fulfilled] : (state, action) => {
+            state.postNews.Loading = false;
+            state.postNews.Error = false;
+            state.postNews.Success = true;
+            state.postNews.Data = action.payload;
         },
-        [PostLiga.rejected] : (state, action) => {
-            state.postLiga.Loading = false;
-            state.postLiga.Error = true;
-            state.postLiga.Success = false;
-            state.postLiga.Data = action.payload;
+        [PostNews.rejected] : (state, action) => {
+            state.postNews.Loading = false;
+            state.postNews.Error = true;
+            state.postNews.Success = false;
+            state.postNews.Data = action.payload;
         },//
-        [DeleteLiga.pending] : (state, action) => {
-            state.deleteLiga.Loading = true;
-            state.deleteLiga.Error = false;
-            state.deleteLiga.Success = false;
+        [DeleteNews.pending] : (state, action) => {
+            state.deleteNews.Loading = true;
+            state.deleteNews.Error = false;
+            state.deleteNews.Success = false;
         },
-        [DeleteLiga.fulfilled] : (state, action) => {
-            state.deleteLiga.Loading = false;
-            state.deleteLiga.Error = false;
-            state.deleteLiga.Success = true;
-            state.deleteLiga.Data = action.payload;
+        [DeleteNews.fulfilled] : (state, action) => {
+            state.deleteNews.Loading = false;
+            state.deleteNews.Error = false;
+            state.deleteNews.Success = true;
+            state.deleteNews.Data = action.payload;
         },
-        [DeleteLiga.rejected] : (state, action) => {
-            state.deleteLiga.Loading = false;
-            state.deleteLiga.Error = true;
-            state.deleteLiga.Success = false;
-            state.deleteLiga.Data = action.payload;
+        [DeleteNews.rejected] : (state, action) => {
+            state.deleteNews.Loading = false;
+            state.deleteNews.Error = true;
+            state.deleteNews.Success = false;
+            state.deleteNews.Data = action.payload;
         },//
-        [PutLiga.pending] : (state, action) => {
-            state.putLiga.Loading = true;
-            state.putLiga.Error = false;
-            state.putLiga.Success = false;
+        [PutNews.pending] : (state, action) => {
+            state.putNews.Loading = true;
+            state.putNews.Error = false;
+            state.putNews.Success = false;
         },
-        [PutLiga.fulfilled] : (state, action) => {
-            state.putLiga.Loading = false;
-            state.putLiga.Error = false;
-            state.putLiga.Success = true;
-            state.putLiga.Data = action.payload;
+        [PutNews.fulfilled] : (state, action) => {
+            state.putNews.Loading = false;
+            state.putNews.Error = false;
+            state.putNews.Success = true;
+            state.putNews.Data = action.payload;
         },
-        [PutLiga.rejected] : (state, action) => {
-            state.putLiga.Loading = false;
-            state.putLiga.Error = true;
-            state.putLiga.Success = false;
-            state.putLiga.Data = action.payload;
+        [PutNews.rejected] : (state, action) => {
+            state.putNews.Loading = false;
+            state.putNews.Error = true;
+            state.putNews.Success = false;
+            state.putNews.Data = action.payload;
         }
     }
 })
-export const {} = LigaSlice.actions;
-export default LigaSlice.reducer
+export const {} = NewsSlice.actions;
+export default NewsSlice.reducer
