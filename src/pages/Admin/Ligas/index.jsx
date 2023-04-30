@@ -1,6 +1,8 @@
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import axios from "axios"
 import { IMAGE_URL } from "../../../utils"
+import { GetLiga, PostLiga } from "../../../redux/liga"
+import { useDispatch, useSelector } from "react-redux"
 
 
 function AdminLigas() {
@@ -10,6 +12,11 @@ function AdminLigas() {
     const title = useRef()
     const [titleEdit, setTitleEdit] = useState()
     const [imgLoading, SetImgLoading] = useState(false)
+    const dispatch = useDispatch()
+    const dataLiga = useSelector(state => state.liga)
+    useEffect(() => {
+        dispatch(GetLiga())
+    }, [])
     const UploadImage = (e) => {
         const formData = new FormData()
         formData.append("file", e.target.files[0])
@@ -28,13 +35,54 @@ function AdminLigas() {
     }
     const modalOpen = () => {setModal(true)}
     const modalClose = () => {setModal(false);setModalEdit(false);SetImgLoading(false)}
+    const Add = async(e) => {
+        e.preventDefault();
+        const body = {
+          name: title.current.value,
+          imgPath: image
+        }
+        const config ={headers: {
+            'ngrok-skip-browser-warning': 'true',
+            'Authorization': `Bearer ${window.localStorage.getItem("AuthToken")}`,
+            'Content-Type': 'application/json'
+        }}
+        await dispatch(PostLiga({body, config}))
+        modalClose()
+        dispatch(GetLiga())
+    }
+    // const Del = async(e) => {
+    //     const config ={headers: {
+    //         'ngrok-skip-browser-warning': 'true',
+    //         'Authorization': `Bearer ${window.localStorage.getItem("AuthToken")}`,
+    //         'Content-Type': 'application/json'
+    //     }}
+    //     const id = e.target.value
+    //     await dispatch(DeleteGroup({id,config}))
+    //     modalClose()
+    //     dispatch(GetGroup())
+    // }
+    // const Edit = async(e) => {
+    //     e.preventDefault();
+    //     const body = {
+    //       name: title.current.value,
+    //       imgPath: image
+    //     }
+    //     const config ={headers: {
+    //         'ngrok-skip-browser-warning': 'true',
+    //         'Authorization': `Bearer ${window.localStorage.getItem("AuthToken")}`,
+    //         'Content-Type': 'application/json'
+    //     }}
+    //     await dispatch(PostGroup({body, config}))
+    //     modalClose()
+    //     dispatch(GetGroup())
+    // }
     return(
         <div className="AdminLigas main-box">
             <span className="main-btn-back">
                 <button className="main-button" onClick={modalOpen}>+ Add Liga</button>
             </span>
             {modal || modalEdit ? <div className="overlay" onClick={modalClose}></div> :null}
-            {modal ? <form className="main-modal">
+            {modal ? <form className="main-modal" onSubmit={Add}>
                 <h1>Add Liga</h1>
                 <h4>Enter Liga's title</h4>
                 <input type="text" ref={title} placeholder="Liga's title" required/>
