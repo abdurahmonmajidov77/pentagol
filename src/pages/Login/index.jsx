@@ -2,25 +2,33 @@ import { useNavigate } from 'react-router';
 import './style.css';
 import axios from 'axios';
 import { API_URL } from '../../utils';
+import { useRef } from 'react';
 
 function Login() {
-    const navigate = useNavigate()
-    const HandleBack = () => {
-        navigate('/')
+  const username = useRef()
+  const password = useRef()
+  const navigate = useNavigate()
+  const HandleBack = () => {
+      navigate('/')
+  }
+  const HandleSubmit = async(e) => {
+    e.preventDefault()
+    const body = {
+      username: username.current.value,
+      password: password.current.value
     }
-    const HandleSubmit = async() => {
-      const res = await axios.post(`${API_URL}/auth`, {headers: {'ngrok-skip-browser-warning': 'true'}})
-      console.log(res);
-      window.localStorage.setItem("AuthToken", res)
-    }
+    const res = await axios.post(`${API_URL}/auth`,body, {headers: {'ngrok-skip-browser-warning': 'true'}})
+    console.log(res);
+    window.localStorage.setItem("AuthToken", res.token)
+  }
   return (
     <div className="Login">
         <i onClick={HandleBack} className='fa-solid fa-arrow-left'></i>
         <form className="LoginBox" onSubmit={HandleSubmit}>
             <h1>Sign In</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, libero?</p>
-            <input type="text" placeholder='Enter Name'/>
-            <input type="text" placeholder='Enter Password'/>
+            <input ref={username} type="text" placeholder='Enter Name'/>
+            <input ref={password} type="text" placeholder='Enter Password'/>
             <button type='submit'>Sign In</button>
         </form>
     </div>

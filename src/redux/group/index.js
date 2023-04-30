@@ -15,10 +15,10 @@ export const PostGroup = createAsyncThunk("group/post", async({body, config}) =>
     return await axios.post(`${API_URL}/club`,body,config).then(res => res.data)
 })
 export const DeleteGroup = createAsyncThunk("group/delete", async({id, config}) => {
-    return await axios.delete(`${API_URL}/club/${id}`, config,{headers: {'ngrok-skip-browser-warning': 'true'}}).then(res => res.data)
+    return await axios.delete(`${API_URL}/club/${id}`, config).then(res => res.data)
 })
 export const PutGroup = createAsyncThunk("group/put", async({id, body, config}) => {
-    return await axios.put(`${API_URL}/club/${id}`,body,config,{headers: {'ngrok-skip-browser-warning': 'true'}}).then(res => res.data)
+    return await axios.put(`${API_URL}/club/${id}`,body,config).then(res => res.data)
 })
 
 const GroupSlice = createSlice({

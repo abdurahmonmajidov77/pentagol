@@ -10,8 +10,8 @@ import { useEffect } from "react"
 function Admin() {
     const navigate = useNavigate() 
     useEffect(() => {  
-        !window.localStorage.getItem("AuthToken") ? navigate("/sign") : null
-    })
+       if(!window.localStorage.getItem("AuthToken")){navigate("/sign")}
+    },[])
     return(
         <div className="Admin">
             <AdminSidebar/>

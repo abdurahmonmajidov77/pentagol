@@ -40,22 +40,21 @@ function AdminGroups() {
           name: title.current.value,
           imgPath: image
         }
-        const config = {
-            headers:{
-                Authorization: `Bearer ${window.localStorage.getItem("AuthToken")}` 
-            }
-        }
+        const config ={headers: {
+            'ngrok-skip-browser-warning': 'true',
+            'Authorization': `Bearer ${window.localStorage.getItem("AuthToken")}`,
+            'Content-Type': 'application/json'
+        }}
         await dispatch(PostGroup({body, config}))
         modalClose()
         dispatch(GetGroup())
     }
     const Del = async(e) => {
-        const config = {
-            headers:{
-                Authorization: `Bearer ${window.localStorage.getItem("AuthToken")}`,
-                headers: {'ngrok-skip-browser-warning': 'true'} 
-            }
-        }
+        const config ={headers: {
+            'ngrok-skip-browser-warning': 'true',
+            'Authorization': `Bearer ${window.localStorage.getItem("AuthToken")}`,
+            'Content-Type': 'application/json'
+        }}
         const id = e.target.value
         await dispatch(DeleteGroup({id,config}))
         modalClose()
