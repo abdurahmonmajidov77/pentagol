@@ -7,7 +7,6 @@ import './style.css';
 function Home() {
   return (
     <div className="Home">
-        <Navbar/>
         <Main/>
         <TopNews/>
         <Footer/>

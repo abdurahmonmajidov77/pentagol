@@ -1,8 +1,11 @@
 .TopNews{
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .TopNewsBox{
-    width: 100%;
+    width: 80%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -16,13 +19,13 @@
 }
 .TopNewsBox ul li:first-child{
     position: relative;
-    width: 65%;
+    width: 84%;
     border-radius: 1vw;
 }
 .TopNewsBox ul li:first-child img{
     width: 100%;
     border-radius: 1vw;
-    height: 50vh;
+    height: 60vh;
 }
 .TopNewsBox ul li:first-child .TopNewsItemTexts{
     padding: 2vw;
@@ -37,7 +40,7 @@
     font-size: 1.2vw;
 }
 .TopNewsBox ul li{
-    width: 21%;
+    width: 27%;
     position: relative;
     cursor: pointer;
     margin: .6vw;
@@ -64,61 +67,61 @@
     font-size: 1.05vw;
     margin: 0.4vw;
 }
-/*  */
-.TopNewsBoxImgBox{
-    position: relative;
-    width: 73%;
+.TopNewsTable{
+    width: 25%;
+    background-color: var(--card);
+    padding: 1.4vw .8vw;
     border-radius: 1vw;
+    margin-right: 5%;
 }
-.TopNewsBoxImgBox img{
+.TopNewsTable h3{
+    font-size: 2vw;
+    margin-bottom: 1vw;
+}
+.TopNewsTable select{
     width: 100%;
-    border-radius: 1vw;
-    height: 50vh;
-}
-.TopNewsBoxImgBoxText{
-    position: absolute;
-    color: white;
-    bottom: 0;
-    padding: 2vw;
-}
-.TopNewsBoxImgBoxText h3{
-    font-size: 2.5vw;
-    margin: 0.4vw;
-    width: 65%;
-}
-.TopNewsBoxImgBoxText p{
-    margin: 0.4vw;
-    font-size: 1.2vw;
-}
-.TopNewsInbox{
-    width: 100%;
-}
-.TopNewsInbox ul{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-}
-.TopNewsInbox ul li{
-    width: fit-content;
-    cursor: pointer;
-    position: relative;
-    margin: .6vw;
-    border-radius: 1vw;
-}
-.TopNewsInbox ul li:hover{
-    box-shadow: 0px 5px 10px rgba(0,0,0,.25);
-}
-.TopNewsInbox ul li img{
-    width: 100%;
-    border-radius: 1vw;
-}
-
-.TopNewsInbox ul li h3{
+    padding: .8vw;
+    border-radius: .6vw;
     font-size: 1.3vw;
-    margin: 0.4vw;
+    -webkit-appearance: none;
+    background-color: var(--white);
 }
-.TopNewsInbox ul li p{
-    font-size: 1.05vw;
-    margin: 0.4vw;
+.TopNewsTable ul{
+    width: 100%;
+}
+.TopNewsTable ul li:first-child .TopNewsSelectUp h5:first-child{
+    margin-right: 2vw;
+}
+.TopNewsTable ul li:nth-child(even){
+    background-color: var(--white);
+}
+.TopNewsTable ul li{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .8vw;
+    margin: .5vw 0;
+    border-radius: .6vw;
+}
+.TopNewsSelectUp{
+    display: flex;
+    align-items: center;
+}
+.TopNewsSelectUp img{
+    width: 20%;
+}
+.TopNewsSelectUp h5{
+    font-size: 1.4vw;
+    font-weight: 500;
+    margin: 0 .5vw;
+}
+.TopNewsSelectDown{
+    display: flex;
+    align-items: center;
+}
+.TopNewsSelectDown h5{
+    font-size: 1.4vw;
+    font-weight: 500;
+    margin: 0 .5vw;
 }
