@@ -3,11 +3,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-<<<<<<< HEAD
     padding: 1vw 0;
     margin: 1vw 0;
-=======
->>>>>>> 4b711196beb20e9f027ca6e1036233d31b359d49
 }
 .TopNewsBox{
     width: 80%;
@@ -82,10 +79,7 @@
 .TopNewsTable h3{
     font-size: 2vw;
     margin-bottom: 1vw;
-<<<<<<< HEAD
     color: var(--black);
-=======
->>>>>>> 4b711196beb20e9f027ca6e1036233d31b359d49
 }
 .TopNewsTable select{
     width: 100%;
@@ -93,10 +87,7 @@
     border-radius: .6vw;
     font-size: 1.3vw;
     -webkit-appearance: none;
-<<<<<<< HEAD
     color: var(--black);
-=======
->>>>>>> 4b711196beb20e9f027ca6e1036233d31b359d49
     background-color: var(--white);
 }
 .TopNewsTable ul{
@@ -128,10 +119,7 @@
     font-size: 1.4vw;
     font-weight: 500;
     margin: 0 .5vw;
-<<<<<<< HEAD
     color: var(--black);
-=======
->>>>>>> 4b711196beb20e9f027ca6e1036233d31b359d49
 }
 .TopNewsSelectDown{
     display: flex;
@@ -141,8 +129,5 @@
     font-size: 1.4vw;
     font-weight: 500;
     margin: 0 .5vw;
-<<<<<<< HEAD
     color: var(--black);
-=======
->>>>>>> 4b711196beb20e9f027ca6e1036233d31b359d49
 }

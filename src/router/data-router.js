@@ -1,8 +1,7 @@
 import { lazy } from "react";
-const Home = lazy(() => import ("../pages/Home"))
 const Admin = lazy(() => import ("../pages/Admin/index"))
 const Login = lazy(() => import("../pages/Login/index"))
-const More = lazy(() => import("../pages/More"))
+const More = lazy(() => import("../pages/More/index"))
 const Home = lazy(() => import("../pages/Home/index"))
 export const DataRouter = [
     {
@@ -14,7 +13,6 @@ export const DataRouter = [
         id: 2,
         path: "/",
         Element: <Home/>
-<<<<<<< HEAD
     },
     {
         id: 3,
@@ -26,7 +24,5 @@ export const DataRouter = [
         id: 4,
         path: "/more",
         Element: <More/>
-=======
->>>>>>> 4b711196beb20e9f027ca6e1036233d31b359d49
     }
 ]
