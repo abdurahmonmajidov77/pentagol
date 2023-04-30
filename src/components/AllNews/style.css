@@ -1,0 +1,64 @@
+.AllNews{
+    width: 100%;
+    padding: 1vw 0;
+    margin: 1vw 0;
+}
+.AllNews h1{
+    font-size: 3vw;
+    color: white;
+    background-color: var(--green);
+    margin: 1vw 2vw;
+    padding: 1vw;
+    border-radius: 1vw;
+}
+.AllNews ul{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.AllNews ul li{
+    cursor: pointer;
+    width: 28%;
+    margin: 1vw;
+    padding: 1vw;
+    background-color: var(--card);
+    border-radius: 1vw;
+}
+.AllNews ul li:hover{
+    box-shadow: 0 .8vw 2vw rgba(0, 0, 0, 0.175);
+}
+.AllNews ul li img{
+    width: 100%;
+    border-radius: 1vw;
+    margin-bottom: 1vw;
+}
+.AllNews ul li h3{
+    font-size: 1.5vw;
+    margin: 1vw .4vw;
+    color: var(--black);
+}
+.AllNews ul li p{
+    font-size: 1.25vw;
+    margin: .4vw;
+    font-weight: 400;
+    color: var(--black);
+}
+.AllNews ul li h5{
+    font-size: 1.1vw;
+    margin: .4vw;
+    margin-top: .6vw;
+    font-weight: 300;
+    color: var(--black);
+}
+.AllNews button{
+    font-size: 1.8vw;
+    text-align: center;
+    width: 96%;
+    color: var(--black);
+    background-color: var(--light);
+    margin: 2%;
+    padding: 1vw;
+    border-radius: 1vw;
+}

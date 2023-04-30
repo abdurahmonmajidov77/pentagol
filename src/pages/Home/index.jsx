@@ -1,10 +1,19 @@
+import AllNews from '../../components/AllNews';
+import Footer from '../../components/Footer';
+import LastNews from '../../components/LastNews';
+import Main from '../../components/Main';
 import Navbar from '../../components/Navbar';
+import TopNews from '../../components/TopNews';
 import './style.css';
 
 function Home() {
   return (
     <div className="Home">
-        <Navbar/>
+        <Main/>
+        <TopNews/>
+        <LastNews/>
+        <AllNews/>
+        <Footer/>
     </div>
   );
 }

@@ -38,7 +38,7 @@ function AdminGroups() {
         e.preventDefault();
         const body = {
           name: title.current.value,
-          img: image
+          imgPath: image
         }
         const config = {
             headers:{
@@ -52,7 +52,8 @@ function AdminGroups() {
     const Del = async(e) => {
         const config = {
             headers:{
-                Authorization: `Bearer ${window.localStorage.getItem("AuthToken")}` 
+                Authorization: `Bearer ${window.localStorage.getItem("AuthToken")}`,
+                headers: {'ngrok-skip-browser-warning': 'true'} 
             }
         }
         const id = e.target.value

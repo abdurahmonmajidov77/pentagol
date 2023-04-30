@@ -12,7 +12,7 @@ export const GetGroupLegueId = createAsyncThunk("groupid/get", async(id) => {
     return await axios.get(`${API_URL}/club/clubpropertiesbyleague/${id}?PageSize=1&PageIndex=1`,{headers: {'ngrok-skip-browser-warning': 'true'}}).then(res => res.data)
 })
 export const PostGroup = createAsyncThunk("group/post", async({body, config}) => {
-    return await axios.post(`${API_URL}/club`,body,config,{headers: {'ngrok-skip-browser-warning': 'true'}}).then(res => res.data)
+    return await axios.post(`${API_URL}/club`,body,config).then(res => res.data)
 })
 export const DeleteGroup = createAsyncThunk("group/delete", async({id, config}) => {
     return await axios.delete(`${API_URL}/club/${id}`, config,{headers: {'ngrok-skip-browser-warning': 'true'}}).then(res => res.data)
