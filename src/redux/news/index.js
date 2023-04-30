@@ -3,7 +3,7 @@ import { API_URL } from "../../utils"
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 
 export const GetNews = createAsyncThunk("news/get", async() => {
-    return await axios.get(`${API_URL}/news`).then(res => res.data)
+    return await axios.get(`${API_URL}/news`,{headers: {'ngrok-skip-browser-warning': 'true'}}).then(res => res.data)
 })
 export const GetNewsId = createAsyncThunk("newsid/get", async(id) => {
     return await axios.get(`${API_URL}/news/${id}`).then(res => res.data)

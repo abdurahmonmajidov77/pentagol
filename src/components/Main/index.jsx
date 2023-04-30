@@ -1,6 +1,14 @@
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { GetLiga } from '../../redux/liga'
 import './style.css'
 
 function Main() {
+    const dispatch = useDispatch()
+    const dataLiga = useSelector(state => state.liga)
+    useEffect(() => {
+        dispatch(GetLiga())
+    },[])
   return (
     <div className="Main">
         <div className="MainBox">
