@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react"
 import axios from "axios"
 import { IMAGE_URL } from "../../../utils"
-import { GetLiga, PostLiga } from "../../../redux/liga"
+import { DeleteLiga, GetLiga, PostLiga, PutLiga } from "../../../redux/liga"
 import { useDispatch, useSelector } from "react-redux"
 
 
@@ -14,6 +14,7 @@ function AdminLigas() {
     const [imgLoading, SetImgLoading] = useState(false)
     const dispatch = useDispatch()
     const dataLiga = useSelector(state => state.liga)
+    const [editId, setEditId] = useState(null)
     useEffect(() => {
         dispatch(GetLiga())
     }, [])
@@ -50,32 +51,32 @@ function AdminLigas() {
         modalClose()
         dispatch(GetLiga())
     }
-    // const Del = async(e) => {
-    //     const config ={headers: {
-    //         'ngrok-skip-browser-warning': 'true',
-    //         'Authorization': `Bearer ${window.localStorage.getItem("AuthToken")}`,
-    //         'Content-Type': 'application/json'
-    //     }}
-    //     const id = e.target.value
-    //     await dispatch(DeleteGroup({id,config}))
-    //     modalClose()
-    //     dispatch(GetGroup())
-    // }
-    // const Edit = async(e) => {
-    //     e.preventDefault();
-    //     const body = {
-    //       name: title.current.value,
-    //       imgPath: image
-    //     }
-    //     const config ={headers: {
-    //         'ngrok-skip-browser-warning': 'true',
-    //         'Authorization': `Bearer ${window.localStorage.getItem("AuthToken")}`,
-    //         'Content-Type': 'application/json'
-    //     }}
-    //     await dispatch(PostGroup({body, config}))
-    //     modalClose()
-    //     dispatch(GetGroup())
-    // }
+    const Del = async(e) => {
+        const config ={headers: {
+            'ngrok-skip-browser-warning': 'true',
+            'Authorization': `Bearer ${window.localStorage.getItem("AuthToken")}`,
+            'Content-Type': 'application/json'
+        }}
+        const id = e.target.value
+        await dispatch(DeleteLiga({id,config}))
+        modalClose()
+        dispatch(GetLiga())
+    }
+    const Edit = async(e) => {
+        e.preventDefault();
+        const body = {
+          name: title.current.value,
+          imgPath: image
+        }
+        const config ={headers: {
+            'ngrok-skip-browser-warning': 'true',
+            'Authorization': `Bearer ${window.localStorage.getItem("AuthToken")}`,
+            'Content-Type': 'application/json'
+        }}
+        await dispatch(PutLiga({editId,body, config}))
+        modalClose()
+        dispatch(GetLiga())
+    }
     return(
         <div className="AdminLigas main-box">
             <span className="main-btn-back">
@@ -90,7 +91,7 @@ function AdminLigas() {
                 {imgLoading ? <p>Loading ...</p> : <input type="file" required onChange={UploadImage}/>}
                 <button>+ Add liga</button>
             </form> :null}
-            {modalEdit ? <form className="main-modal">
+            {modalEdit ? <form className="main-modal" onSubmit={Edit}>
                 <h1>Edit Liga</h1>
                 <h4>Edit Liga's title</h4>
                 <input type="text" value={titleEdit} onChange={(e) => setTitleEdit(e.target.value)} placeholder="Liga's title" required/>
@@ -103,8 +104,8 @@ function AdminLigas() {
                     <img src="https://picsum.photos/300" alt="img" />
                     <h2>Premier Liga</h2>
                     <span>
-                        <button className="main-edit" onClick={() => setModalEdit(true)}>Edit</button>
-                        <button className="main-del">Delete</button>
+                        <button className="main-edit" onClick={(e) => {setModalEdit(true);setEditId(e.target.value)}}>Edit</button>
+                        <button className="main-del" onClick={Del}>Delete</button>
                     </span>
                 </li>
             </ul>

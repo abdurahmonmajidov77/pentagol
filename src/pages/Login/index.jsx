@@ -21,7 +21,7 @@ function Login() {
       console.log(body);
       const res = await axios.post(`${API_URL}/auth`,body, {headers: {'ngrok-skip-browser-warning': 'true'}})
       console.log(res);
-      window.localStorage.setItem("AuthToken", res.token)
+      window.localStorage.setItem("AuthToken", res.data.token)
       navigate("/admin")
     } catch (error) {
       console.log(error);
