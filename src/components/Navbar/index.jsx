@@ -7,6 +7,7 @@ function Navbar() {
   const Recent = useRef()
   const ModeChanger = () => {
     document.documentElement.style.setProperty("--white", "#1d1d1d")
+    document.documentElement.style.setProperty("--light", "#2F3138")
     document.documentElement.style.setProperty("--greds", "#3F534C")
     document.documentElement.style.setProperty("--card", "#000000")
     document.documentElement.style.setProperty("--black", "#fff")
@@ -15,6 +16,7 @@ function Navbar() {
   }
   const ModeRecent = () => {
     document.documentElement.style.setProperty("--white", "#ffffff")
+    document.documentElement.style.setProperty("--light", "#EAEAEA")
     document.documentElement.style.setProperty("--greds", "#DAE9E0")
     document.documentElement.style.setProperty("--card", "#F4F5F7")
     document.documentElement.style.setProperty("--black", "#000000")
