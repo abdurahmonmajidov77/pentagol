@@ -62,6 +62,7 @@
 .Admin .main-li p{
     font-size: 1.2vw;
     color: var(--black);
+    max-width: 50%;
 }
 .Admin .main-li span{
     display: flex;

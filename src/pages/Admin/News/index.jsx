@@ -12,7 +12,7 @@ function AdminNews() {
     const UploadImage = (e) => {
         const formData = new FormData()
         formData.append("file", e.target.files[0])
-        formData.append("", "")
+        formData.append("upload_preset", "fzgqhpkb")
         SetImgLoading(true)
         const postImage = async() => {
             try {
@@ -47,8 +47,10 @@ function AdminNews() {
             </form> :null}
             <ul className="main-ul">
                 <li className="main-li">
-                    <img src="https://picsum.photos/300" alt="" />
-                    <h2>Barcelona</h2>
+                    <img src="https://picsum.photos/300" alt="img" />
+                    <h2>Title</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad cupiditate in laborum molestiae molestias, corporis quas fugit aliquam sit! Beatae.</p>
+                    <p>12.02.1022</p>
                     <span>
                         <button className="main-edit">Edit</button>
                         <button className="main-del">Delete</button>

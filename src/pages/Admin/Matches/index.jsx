@@ -6,23 +6,6 @@ function AdminMatches() {
     const [modal, setModal] = useState(false)
     const [image, SetImage] = useState(null)
     const [goal, setGoal] = useState("0:0")
-    const [imgLoading, SetImgLoading] = useState(false)
-    const UploadImage = (e) => {
-        const formData = new FormData()
-        formData.append("file", e.target.files[0])
-        formData.append("", "")
-        SetImgLoading(true)
-        const postImage = async() => {
-            try {
-                const response = await axios.post(`${IMAGE_URL}`, formData)
-                SetImage(response?.data.secure_url)
-                SetImgLoading(false)
-            } catch (error) {
-                console.log(error);
-            }
-        }
-        postImage()
-    }
     const modalOpen = () => {setModal(true)}
     const modalClose = () => {setModal(false)}
     return(

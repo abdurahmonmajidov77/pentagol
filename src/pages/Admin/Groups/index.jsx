@@ -10,7 +10,7 @@ function AdminGroups() {
     const UploadImage = (e) => {
         const formData = new FormData()
         formData.append("file", e.target.files[0])
-        formData.append("", "")
+        formData.append("upload_preset", "fzgqhpkb")
         SetImgLoading(true)
         const postImage = async() => {
             try {
