@@ -1,0 +1,40 @@
+.Navbar{
+    z-index: 2;
+    position: fixed;
+    width: 100%;
+    padding: 1vw 2.4vw;
+    background-color: var(--green);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    left: 0;
+}
+.Navbar img{
+    width: 12%;
+}
+.NavBox{
+    display: flex;
+}
+.light{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2vw;
+    padding: 1vw 1.3vw;
+    background-color: white;
+    border-radius: 50%;
+    color: black;
+}
+.dark{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    font-size: 2vw;
+    padding: 1vw;
+    background-color: black;
+    border-radius: 50%;
+    color: white;
+    display: none;
+}
