@@ -3,19 +3,19 @@ import { API_URL } from "../../utils"
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 
 export const GetMatch = createAsyncThunk("match/get", async() => {
-    return await axios.get(`${API_URL}`).then(res => res.data)
+    return await axios.get(`${API_URL}/match`).then(res => res.data)
 })
 export const GetMatchId = createAsyncThunk("matchid/get", async(id) => {
-    return await axios.get(`${API_URL}/${id}`).then(res => res.data)
+    return await axios.get(`${API_URL}/match/${id}`).then(res => res.data)
 })
 export const PostMatch = createAsyncThunk("match/post", async({body, config}) => {
-    return await axios.post(`${API_URL}`,body,config).then(res => res.data)
+    return await axios.post(`${API_URL}/match`,body,config).then(res => res.data)
 })
 export const DeleteMatch = createAsyncThunk("match/delete", async({id, config}) => {
-    return await axios.delete(`${API_URL}/${id}`, config).then(res => res.data)
+    return await axios.delete(`${API_URL}/match/${id}`, config).then(res => res.data)
 })
 export const PutMatch = createAsyncThunk("match/put", async({id, body, config}) => {
-    return await axios.put(`${API_URL}/${id}`,body,config).then(res => res.data)
+    return await axios.put(`${API_URL}/match/${id}`,body,config).then(res => res.data)
 })
 
 const MatchSlice = createSlice({

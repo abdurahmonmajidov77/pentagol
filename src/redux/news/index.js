@@ -3,19 +3,19 @@ import { API_URL } from "../../utils"
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 
 export const GetNews = createAsyncThunk("news/get", async() => {
-    return await axios.get(`${API_URL}`).then(res => res.data)
+    return await axios.get(`${API_URL}/news`).then(res => res.data)
 })
 export const GetNewsId = createAsyncThunk("newsid/get", async(id) => {
-    return await axios.get(`${API_URL}/${id}`).then(res => res.data)
+    return await axios.get(`${API_URL}/news/${id}`).then(res => res.data)
 })
 export const PostNews = createAsyncThunk("news/post", async({body, config}) => {
-    return await axios.post(`${API_URL}`,body,config).then(res => res.data)
+    return await axios.post(`${API_URL}/news`,body,config).then(res => res.data)
 })
 export const DeleteNews = createAsyncThunk("news/delete", async({id, config}) => {
-    return await axios.delete(`${API_URL}/${id}`, config).then(res => res.data)
+    return await axios.delete(`${API_URL}/news/${id}`, config).then(res => res.data)
 })
 export const PutNews = createAsyncThunk("news/put", async({id, body, config}) => {
-    return await axios.put(`${API_URL}/${id}`,body,config).then(res => res.data)
+    return await axios.put(`${API_URL}/news/${id}`,body,config).then(res => res.data)
 })
 
 const NewsSlice = createSlice({

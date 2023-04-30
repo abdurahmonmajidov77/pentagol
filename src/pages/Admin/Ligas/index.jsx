@@ -27,7 +27,7 @@ function AdminLigas() {
         postImage()
     }
     const modalOpen = () => {setModal(true)}
-    const modalClose = () => {setModal(false);setModalEdit(false)}
+    const modalClose = () => {setModal(false);setModalEdit(false);SetImgLoading(false)}
     return(
         <div className="AdminLigas main-box">
             <span className="main-btn-back">
@@ -39,7 +39,7 @@ function AdminLigas() {
                 <h4>Enter Liga's title</h4>
                 <input type="text" ref={title} placeholder="Liga's title" required/>
                 <h4>Enter Liga's photo</h4>
-                {imgLoading ? <p>Loading ...</p> : <input on type="file" required onChange={UploadImage}/>}
+                {imgLoading ? <p>Loading ...</p> : <input type="file" required onChange={UploadImage}/>}
                 <button>+ Add liga</button>
             </form> :null}
             {modalEdit ? <form className="main-modal">
@@ -47,7 +47,7 @@ function AdminLigas() {
                 <h4>Edit Liga's title</h4>
                 <input type="text" value={titleEdit} onChange={(e) => setTitleEdit(e.target.value)} placeholder="Liga's title" required/>
                 <h4>Edit Liga's photo</h4>
-                {imgLoading ? <p>Loading ...</p> : <input on type="file" required onChange={UploadImage}/>}
+                {imgLoading ? <p>Loading ...</p> : <input type="file" required onChange={UploadImage}/>}
                 <button>+ Edit liga</button>
             </form> :null}
             <ul className="main-ul">

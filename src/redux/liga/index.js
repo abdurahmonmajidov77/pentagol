@@ -2,20 +2,20 @@ import axios from "axios"
 import { API_URL } from "../../utils"
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 
-export const GetLiga = createAsyncThunk("liga/get", async() => {
-    return await axios.get(`${API_URL}`).then(res => res.data)
+export const GetLiga = createAsyncThunk("league/get", async() => {
+    return await axios.get(`${API_URL}/league`).then(res => res.data)
 })
-export const GetLigaId = createAsyncThunk("ligaid/get", async(id) => {
-    return await axios.get(`${API_URL}/${id}`).then(res => res.data)
+export const GetLigaId = createAsyncThunk("leagueid/get", async(id) => {
+    return await axios.get(`${API_URL}/league/${id}`).then(res => res.data)
 })
-export const PostLiga = createAsyncThunk("liga/post", async({body, config}) => {
-    return await axios.post(`${API_URL}`,body,config).then(res => res.data)
+export const PostLiga = createAsyncThunk("league/post", async({body, config}) => {
+    return await axios.post(`${API_URL}/league`,body,config).then(res => res.data)
 })
-export const DeleteLiga = createAsyncThunk("liga/delete", async({id, config}) => {
-    return await axios.delete(`${API_URL}/${id}`, config).then(res => res.data)
+export const DeleteLiga = createAsyncThunk("league/delete", async({id, config}) => {
+    return await axios.delete(`${API_URL}/league/${id}`, config).then(res => res.data)
 })
-export const PutLiga = createAsyncThunk("liga/put", async({id, body, config}) => {
-    return await axios.put(`${API_URL}/${id}`,body,config).then(res => res.data)
+export const PutLiga = createAsyncThunk("league/put", async({id, body, config}) => {
+    return await axios.put(`${API_URL}/league/${id}`,body,config).then(res => res.data)
 })
 
 const LigaSlice = createSlice({
