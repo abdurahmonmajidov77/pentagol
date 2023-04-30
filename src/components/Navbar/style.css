@@ -23,14 +23,10 @@
     justify-content: center;
     font-size: 2vw;
     padding: 1vw 1.3vw;
-    background-color: white;
-    border-radius: 50%;
-    color: black;
 }
 .dark{
     cursor: pointer;
     display: flex;
-    align-items: center;
     justify-content: center;
     font-size: 2vw;
     padding: 1vw;
