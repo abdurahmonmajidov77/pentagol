@@ -34,7 +34,8 @@ function AdminGroups() {
         }
         postImage()
     }
-    const Add = async() => {
+    const Add = async(e) => {
+        e.preventDefault();
         const body = {
           name: title.current.value,
           img: image
@@ -71,7 +72,7 @@ function AdminGroups() {
                 <h4>Enter Group's title</h4>
                 <input type="text" ref={title} placeholder="Group's title" required/>
                 <h4>Select Group Photo</h4>
-                {imgLoading ? <p>Loading ...</p> : <input onChange={UploadImage} type="file" required/>}
+                {imgLoading ? <p>Loading ...</p> : <input onChange={UploadImage} type="file"/>}
                 <button>+ Add Group</button>
             </form> :null}
             {modalEdit ? <form className="main-modal">
