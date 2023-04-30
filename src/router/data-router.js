@@ -1,8 +1,8 @@
 import { lazy } from "react";
-const Home = lazy(() => import ("../pages/Home"))
 const Admin = lazy(() => import ("../pages/Admin/index"))
 const Login = lazy(() => import("../pages/Login/index"))
-const More = lazy(() => import("../pages/More"))
+const More = lazy(() => import("../pages/More/index"))
+const Home = lazy(() => import("../pages/Home/index"))
 export const DataRouter = [
     {
         id: 1,

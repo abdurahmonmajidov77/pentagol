@@ -13,13 +13,20 @@ function Login() {
   }
   const HandleSubmit = async(e) => {
     e.preventDefault()
-    const body = {
-      username: username.current.value,
-      password: password.current.value
+    try {
+      const body = {
+        username: username.current.value,
+        password: password.current.value
+      }
+      console.log(body);
+      const res = await axios.post(`${API_URL}/auth`,body, {headers: {'ngrok-skip-browser-warning': 'true'}})
+      console.log(res);
+      window.localStorage.setItem("AuthToken", res.data.token)
+      navigate("/admin")
+    } catch (error) {
+      console.log(error);
     }
-    const res = await axios.post(`${API_URL}/auth`,body, {headers: {'ngrok-skip-browser-warning': 'true'}})
-    console.log(res);
-    window.localStorage.setItem("AuthToken", res.token)
+    
   }
   return (
     <div className="Login">

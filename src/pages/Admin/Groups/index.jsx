@@ -60,7 +60,21 @@ function AdminGroups() {
         modalClose()
         dispatch(GetGroup())
     }
-
+    const Edit = async(e) => {
+        e.preventDefault();
+        const body = {
+          name: title.current.value,
+          imgPath: image
+        }
+        const config ={headers: {
+            'ngrok-skip-browser-warning': 'true',
+            'Authorization': `Bearer ${window.localStorage.getItem("AuthToken")}`,
+            'Content-Type': 'application/json'
+        }}
+        await dispatch(PostGroup({body, config}))
+        modalClose()
+        dispatch(GetGroup())
+    }
     return(
         <div className="AdminGrous main-box">
             <span className="main-btn-back">
@@ -75,7 +89,7 @@ function AdminGroups() {
                 {imgLoading ? <p>Loading ...</p> : <input onChange={UploadImage} type="file"/>}
                 <button>+ Add Group</button>
             </form> :null}
-            {modalEdit ? <form className="main-modal">
+            {modalEdit ? <form className="main-modal" onSubmit={Edit}>
                 <h1>Edit Group</h1>
                 <h4>Edit Group's title</h4>
                 <input type="text" ref={title} placeholder="Group's title" required/>
@@ -91,7 +105,7 @@ function AdminGroups() {
                     <img src={e.imgPath} alt="img" />
                     <h2>{e.name}</h2>
                     <span>
-                        <button value={e.id} className="main-edit" onClick={() => setModalEdit(true)}>Edit</button>
+                        <button value={e.id} className="main-edit" onClick={() => {setModalEdit(true)}}>Edit</button>
                         <button value={e.id} className="main-del" onClick={Del}>Delete</button>
                     </span>
                 </li>
