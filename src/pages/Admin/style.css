@@ -1,6 +1,7 @@
 .Admin{
     height: 100%;
 }
+/* main box */
 .Admin .main-box{
     padding-top: 10%;
     padding-left: 18%;
@@ -30,6 +31,7 @@
     color: var(--green);
     background-color: var(--white);
 }
+/* ul */
 .Admin .main-ul{
     display: flex;
     align-items: top;
@@ -38,11 +40,13 @@
     width: 100%;
 }
 .Admin .main-li{
-    width: 30%;
     padding: 1.5vw 1vw;
     margin: 1.2vw;
     border: 0.2vw solid var(--green);
     border-radius: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .Admin .main-li:hover{
     border: 0.2vw dotted var(--green);
@@ -55,10 +59,18 @@
     color: var(--black);
     margin: 1vw;
 }
+.Admin .main-li p{
+    font-size: 1.2vw;
+    color: var(--black);
+}
 .Admin .main-li span{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.Admin .main-li span img{
+    width: 15%;
+    border-radius: 50%;
 }
 .Admin .main-li span button{
     padding: 0.1vw 3vw;
@@ -86,6 +98,7 @@
     border: 0.001vw solid red;
     color: red;
 }
+/* modal */
 .Admin .main-modal{
     z-index: 2;
     position: fixed;
@@ -111,7 +124,7 @@
     font-size: 1.5vw;
     margin: 1vw 1vw;
 }
-.Admin .main-modal input{
+.Admin .main-modal input, .Admin .main-modal select{
     padding: 0.5vw 1vw;
     margin: 0 1vw;
     border: 0.1vw solid var(--green);

@@ -2,8 +2,7 @@ import { useRef, useState } from "react"
 import axios from "axios"
 import { IMAGE_URL } from "../../../utils"
 
-
-function AdminLigas() {
+function AdminGroups() {
     const [modal, setModal] = useState(false)
     const [image, SetImage] = useState(null)
     const title = useRef()
@@ -27,47 +26,31 @@ function AdminLigas() {
     const modalOpen = () => {setModal(true)}
     const modalClose = () => {setModal(false)}
     return(
-        <div className="AdminLigas main-box">
+        <div className="AdminGrous main-box">
             <span className="main-btn-back">
-                <button className="main-button" onClick={modalOpen}>+ Add Liga</button>
+                <button className="main-button" onClick={modalOpen}>+ Add Group</button>
             </span>
             {modal ? <div className="overlay" onClick={modalClose}></div> :null}
             {modal ? <form className="main-modal">
-                <h1>Add Liga</h1>
-                <h4>Enter Liga's title</h4>
-                <input type="text" ref={title} placeholder="Liga's title" required/>
-                <h4>Enter Liga's photo</h4>
-                {imgLoading ? <p>Loading ...</p> : <input on type="file" required onChange={UploadImage}/>}
-                <button>+ Add liga</button>
+                <h1>Add Group</h1>
+                <h4>Enter Group's title</h4>
+                <input type="text" ref={title} placeholder="Group's title" required/>
+                <h4>Select Group Photo</h4>
+                {imgLoading ? <p>Loading ...</p> : <input onChange={UploadImage} type="file" required/>}
+                <button>+ Add Group</button>
             </form> :null}
             <ul className="main-ul">
                 <li className="main-li">
-                    <img src="https://picsum.photos/300" alt="img" />
-                    <h2>Premier Liga</h2>
+                    <img src="https://picsum.photos/300" alt="" />
+                    <h2>Barcelona</h2>
                     <span>
                         <button className="main-edit">Edit</button>
                         <button className="main-del">Delete</button>
                     </span>
                 </li>
                 <li className="main-li">
-                    <img src="https://picsum.photos/300" alt="img" />
-                    <h2>Premier Liga</h2>
-                    <span>
-                        <button className="main-edit">Edit</button>
-                        <button className="main-del">Delete</button>
-                    </span>
-                </li>
-                <li className="main-li">
-                    <img src="https://picsum.photos/300" alt="img" />
-                    <h2>Premier Liga</h2>
-                    <span>
-                        <button className="main-edit">Edit</button>
-                        <button className="main-del">Delete</button>
-                    </span>
-                </li>
-                <li className="main-li">
-                    <img src="https://picsum.photos/300" alt="img" />
-                    <h2>Premier Liga</h2>
+                    <img src="https://picsum.photos/300" alt="" />
+                    <h2>Real Madrid</h2>
                     <span>
                         <button className="main-edit">Edit</button>
                         <button className="main-del">Delete</button>
@@ -77,4 +60,4 @@ function AdminLigas() {
         </div>
     )
 }
-export default AdminLigas
+export default AdminGroups

@@ -15,7 +15,7 @@ function AdminSidebar() {
                 <p className="SidebarText" id="Ligas" onClick={SetMain}>Ligas</p>
                 <p className="SidebarText" id="Matches" onClick={SetMain}>Matches</p>
                 <p className="SidebarText" id="News" onClick={SetMain}>News</p>
-                <p className="SidebarText" id="Points" onClick={SetMain}>Points</p>
+                <p className="SidebarText" id="Groups" onClick={SetMain}>Groups</p>
             </div>
             <div className="AdminTop">
                 <h1>{window.localStorage.getItem("SetMain")}</h1>
