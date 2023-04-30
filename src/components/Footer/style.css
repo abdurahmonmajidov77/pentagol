@@ -35,9 +35,9 @@
     cursor: pointer;
     color: #469264;
     background-color: #DAE9E0;
-    font-size: 2.4vw;
-    padding: 1vw 1.2vw;
-    margin: .6vw;
+    font-size: 2.2vw;
+    padding: .8vw 1vw;
+    margin: .5vw;
     border-radius: 50%;
 }
 .FootBrandBox i:nth-child(1):hover{
@@ -64,15 +64,15 @@
     color: white;
     background-color: #4267B2;
 }
-.FootBrandBox i:nth-child(9):hover{
+.FootBrandBox i:nth-child(7):hover{
     color: #1DA1F2;
     background-color: white;
 }
 .Footer h1{
-    padding: 1.4vw;
+    padding: 1vw;
     margin: 0 auto;
     text-align: center;
-    font-size: 2.6vw;
+    font-size: 2.4vw;
     color: white;
     width: 90%;
     font-weight: 300;

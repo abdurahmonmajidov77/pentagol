@@ -1,6 +1,7 @@
 import Footer from '../../components/Footer';
 import Main from '../../components/Main';
 import Navbar from '../../components/Navbar';
+import TopNews from '../../components/TopNews';
 import './style.css';
 
 function Home() {
@@ -8,6 +9,7 @@ function Home() {
     <div className="Home">
         <Navbar/>
         <Main/>
+        <TopNews/>
         <Footer/>
     </div>
   );
