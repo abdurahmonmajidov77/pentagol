@@ -1,15 +1,16 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  transition: 0.7s;
+.App {
+  text-align: center;
 }
-ul, ol{
-  list-style: none;
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
 }
-a{
-  text-decoration: none;
-  display: inline-block;
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
 }
 input, button, select{
   border: none;
@@ -29,8 +30,18 @@ input, button, select{
   --green: #469264;
   --greds: #DAE9E0;
 }
-h1,h2,h3,h4,h5,h6,p{
-  cursor: default;
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 body{
   overflow-x: hidden;
