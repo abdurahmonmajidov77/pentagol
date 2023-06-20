@@ -45,7 +45,7 @@
     color: white;
     padding: 1vw 3vw;
     font-size: 1.4vw;
-    color: var(--green);
+    background-color: var(--green);
     border-radius: 2vw;
     margin-top: .5vw;
 }

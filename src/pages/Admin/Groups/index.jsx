@@ -34,6 +34,7 @@ function AdminGroups() {
         }
         postImage()
     }
+    //CRUD
     const Add = async(e) => {
         e.preventDefault();
         const body = {
@@ -75,6 +76,7 @@ function AdminGroups() {
         modalClose()
         dispatch(GetGroup())
     }
+    //
     return(
         <div className="AdminGrous main-box">
             <span className="main-btn-back">

@@ -9,12 +9,12 @@ function AdminLigas() {
     const [modal, setModal] = useState(false)
     const [modalEdit, setModalEdit] = useState(false)
     const [image, SetImage] = useState(null)
-    const title = useRef()
     const [titleEdit, setTitleEdit] = useState()
+    const title = useRef()
+    const id  = useRef()
     const [imgLoading, SetImgLoading] = useState(false)
     const dispatch = useDispatch()
     const dataLiga = useSelector(state => state.liga)
-    const [editId, setEditId] = useState(null)
     useEffect(() => {
         dispatch(GetLiga())
     }, [])
@@ -57,23 +57,24 @@ function AdminLigas() {
             'Authorization': `Bearer ${window.localStorage.getItem("AuthToken")}`,
             'Content-Type': 'application/json'
         }}
-        const id = e.target.value
-        await dispatch(DeleteLiga({id,config}))
+        const setid = e.current.value
+        await dispatch(DeleteLiga({setid,config}))
         modalClose()
         dispatch(GetLiga())
     }
     const Edit = async(e) => {
         e.preventDefault();
         const body = {
-          name: title.current.value,
+          name: titleEdit,
           imgPath: image
         }
+        const setid = id.current.value
         const config ={headers: {
             'ngrok-skip-browser-warning': 'true',
             'Authorization': `Bearer ${window.localStorage.getItem("AuthToken")}`,
             'Content-Type': 'application/json'
         }}
-        await dispatch(PutLiga({editId,body, config}))
+        await dispatch(PutLiga({setid,body, config}))
         modalClose()
         dispatch(GetLiga())
     }
@@ -100,14 +101,19 @@ function AdminLigas() {
                 <button>+ Edit liga</button>
             </form> :null}
             <ul className="main-ul">
+                {dataLiga.getLiga.Success == true ? 
+                dataLiga.getLiga.Data.length > 0 ?
+                dataLiga.getLiga.Data.map(e => 
                 <li className="main-li">
-                    <img src="https://picsum.photos/300" alt="img" />
-                    <h2>Premier Liga</h2>
+                    <img src={e.img} alt="img" />
+                    <h2>{e.title}</h2>
                     <span>
-                        <button className="main-edit" onClick={(e) => {setModalEdit(true);setEditId(e.target.value)}}>Edit</button>
-                        <button className="main-del" onClick={Del}>Delete</button>
+                        <button value={e.id} className="main-edit" onClick={(el) => {id.current.value = el.target.value;setModalEdit(true);}}>Edit</button>
+                        <button value={e.id} className="main-del" onClick={(el) => {id.current.value = el.target.value;Del()}}>Delete</button>
                     </span>
                 </li>
+                ) : <h2>No Liga here yet</h2>
+            : dataLiga.getLiga.Loading == true ?  <i className="loading fa-solid fa-spinner fa-spin-pulse"></i> : dataLiga.getLiga.Error == true ? <h2 className='Error'><i className="fa-solid fa-triangle-exclamation fa-fade"></i> Error 500</h2> : null}
             </ul>
         </div>
     )
